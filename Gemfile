@@ -51,3 +51,5 @@ gem 'rack-cors'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
 gem 'responders'
+gem 'faker'
+

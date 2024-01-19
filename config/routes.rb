@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   }
 
   root to: 'home#pages'
+
+  namespace :api do
+    namespace :v1 do
+    resources :members
+    end
+  end
 end
