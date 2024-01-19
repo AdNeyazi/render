@@ -24,5 +24,7 @@ module RenderTest
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.secret_key_base = 'bded34566c4e6caf3f96281e8af08ec0ad98605545f1b667849c44651b97d1b2a412d56b79ffae3f587ffffe26fe63aa375961c0a4bdd7aa33cfff0ec4e3adf3'
+
   end
 end
