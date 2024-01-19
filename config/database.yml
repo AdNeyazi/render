@@ -83,4 +83,4 @@ production:
   <<: *default
   database: render_test_production
   username: render_test
-  password: <%= ENV["RENDER_TEST_DATABASE_PASSWORD"] %>
+  password: 'e9376b82457a9a351f979c0478d326ed'
