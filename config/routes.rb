@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root to: 'users#index'
+  # root to: 'use#index'
 end
