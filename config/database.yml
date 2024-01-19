@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: render_test_production
-  username: render_test
-  password: 'e9376b82457a9a351f979c0478d326ed'
+  username: ror
+  password: '1234'
