@@ -82,4 +82,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  URI: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w 
+  URI: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
+  <<: *default
