@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :members
       resources :events
       resources :newsroom
-        resources :fund_appeals
+      resources :fund_appeals
 
     end
   end
