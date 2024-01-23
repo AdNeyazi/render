@@ -9,10 +9,11 @@ require 'faker'
 
 # Create 50 fake members
 50.times do
-  Member.create!(
-    member_name: Faker::Name.name,
-    course: Faker::Educator.course,
-    member_image_url: Faker::Internet.url,
-    year_of_passing: Faker::Number.between(from: 2000, to: 2023)
+  Event.create(
+    event_title: Faker::Lorem.words(number: 3).join(' '), # Generate a random title with 3 words
+    description: Faker::Lorem.paragraph,
+    event_location: Faker::Address.city,
+    event_type: Faker::Lorem.word,
+    event_image_url: Faker::Internet.url,
   )
 end
