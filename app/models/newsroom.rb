@@ -1,0 +1,2 @@
+class Newsroom < ApplicationRecord
+end
