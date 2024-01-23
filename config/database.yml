@@ -22,9 +22,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  url: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
-  # <<: *default
-  # database: render_test_development
+  <<: *default
+  database: render_test_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,8 +57,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   url: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
-  # <<: *default
-  # database: render_test_test
+  <<: *default
+  database: render_test_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,7 +82,7 @@ test:
 #
 production:
   url: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
-  # <<: *default
-  # database: render_test_production
-  # username: render_test
-  # password: <%= ENV["RENDER_TEST_DATABASE_PASSWORD"] %>
+  <<: *default
+  database: render_test_production
+  username: render_test
+  password: <%= ENV["RENDER_TEST_DATABASE_PASSWORD"] %>
