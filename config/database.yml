@@ -84,3 +84,6 @@ test:
 production:
   <<: *default
   URI: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a.oregon-postgres.render.com/render_db_ed7w
+  database: render_db_ed7w
+  username: render_db_user
+  password: JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B
