@@ -22,9 +22,9 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  URI: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
-  <<: *default
-  database: render_test_development
+  url: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
+  # <<: *default
+  # database: render_test_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,9 +57,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  URI: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
-  <<: *default
-  database: render_test_test
+  url: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
+  # <<: *default
+  # database: render_test_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,8 +82,8 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  URI: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a.oregon-postgres.render.com/render_db_ed7w
-  database: render_test_production
-  username: render_test
-  password: <%= ENV["RENDER_TEST_DATABASE_PASSWORD"] %>
+  url: postgres://render_db_user:JHnPVg1MVXXG7u5VwsIhO7J7JtBp4p1B@dpg-cml959q1hbls73c3ef8g-a/render_db_ed7w
+  # <<: *default
+  # database: render_test_production
+  # username: render_test
+  # password: <%= ENV["RENDER_TEST_DATABASE_PASSWORD"] %>
