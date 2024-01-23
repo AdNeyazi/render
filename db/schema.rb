@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_23_071355) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_23_095656) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,21 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_23_071355) do
     t.string "event_location"
     t.string "event_type"
     t.string "event_image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fund_appeals", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "beneficiary_name"
+    t.string "bank_name"
+    t.string "bank_address"
+    t.string "account_number"
+    t.string "IFSC_code"
+    t.string "name"
+    t.string "email"
+    t.string "mobile_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

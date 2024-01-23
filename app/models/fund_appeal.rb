@@ -1,0 +1,2 @@
+class FundAppeal < ApplicationRecord
+end

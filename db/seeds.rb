@@ -9,10 +9,16 @@ require 'faker'
 
 # Create 50 fake members
 50.times do
-  Newsroom.create(
+  FundAppeal.create(
     title: Faker::Lorem.sentence,
-    event_image: Faker::Placeholdit.image,
     content: Faker::Lorem.paragraph,
-    post_date: Faker::Date.between(from: 1.year.ago, to: Date.today)
+    beneficiary_name: Faker::Name.name,
+    bank_name: Faker::Bank.name,
+    bank_address: Faker::Address.full_address,
+    account_number: Faker::Bank.account_number,
+    IFSC_code: Faker::Bank.swift_bic,
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    mobile_no: Faker::PhoneNumber.phone_number
   )
 end
