@@ -1,0 +1,2 @@
+class DeskMessage < ApplicationRecord
+end

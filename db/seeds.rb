@@ -9,13 +9,10 @@ require 'faker'
 
 # Create 50 fake members
 50.times do
-  MessageHead.create(
-    title: Faker::Lorem.sentence,
+  DeskMessage.create(
+    name: Faker::Name.name,
     photo: Faker::LoremFlickr.image,
     description: Faker::Lorem.paragraph,
-    name: Faker::Name.name,
-    department: Faker::Lorem.word,
-    post: Faker::Lorem.word,
-    university: Faker::University.name
+    title: Faker::Lorem.sentence
   )
 end
