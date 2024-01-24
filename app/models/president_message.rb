@@ -1,0 +1,2 @@
+class PresidentMessage < ApplicationRecord
+end

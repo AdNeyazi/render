@@ -9,16 +9,11 @@ require 'faker'
 
 # Create 50 fake members
 50.times do
-  FundAppeal.create(
+  PresidentMessage.create(
     title: Faker::Lorem.sentence,
-    content: Faker::Lorem.paragraph,
-    beneficiary_name: Faker::Name.name,
-    bank_name: Faker::Bank.name,
-    bank_address: Faker::Address.full_address,
-    account_number: Faker::Bank.account_number,
-    IFSC_code: Faker::Bank.swift_bic,
+    photo: Faker::LoremFlickr.image,
+    description: Faker::Lorem.paragraph,
     name: Faker::Name.name,
-    email: Faker::Internet.email,
-    mobile_no: Faker::PhoneNumber.phone_number
+    post: Faker::Lorem.word
   )
 end

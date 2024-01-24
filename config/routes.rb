@@ -19,6 +19,10 @@ Rails.application.routes.draw do
       resources :events
       resources :newsroom
       resources :fund_appeals
+      resources :about_us
+      resources :president_messages
+
+
 
     end
   end

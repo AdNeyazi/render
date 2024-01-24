@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_23_095656) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_24_101154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "about_us", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "event_title"
@@ -53,6 +60,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_23_095656) do
     t.string "event_image"
     t.text "content"
     t.date "post_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "president_messages", force: :cascade do |t|
+    t.string "title"
+    t.string "photo"
+    t.text "description"
+    t.string "name"
+    t.string "post"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
