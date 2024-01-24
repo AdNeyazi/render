@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :fund_appeals
       resources :about_us
       resources :president_messages
+      resources :message_heads
 
 
 
