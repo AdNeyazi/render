@@ -9,11 +9,8 @@ require 'faker'
 
 # Create 50 fake members
 50.times do
-  CommitteeDetail.create(
-    name: Faker::Company.name,
-    contact_details: Faker::Address.full_address,
-    telephone: Faker::PhoneNumber.phone_number,
-    vision: Faker::Lorem.paragraph,
-    mission: Faker::Lorem.paragraph
+  AboutU.create(
+    title: Faker::Lorem.words(number: 3).join(' ').capitalize,
+    description: Faker::Lorem.paragraph
   )
 end
