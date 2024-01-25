@@ -23,9 +23,7 @@ Rails.application.routes.draw do
       resources :president_messages
       resources :message_heads
       resources :desk_messages
-
-
-
+      resources :committee_details
     end
   end
 end
