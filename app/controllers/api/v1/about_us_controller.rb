@@ -1,8 +1,8 @@
 class Api::V1::AboutUsController < ApplicationController
-	 before_action :set_about_us, only: [:show, :update, :destroy]
+  before_action :set_about_us, only: [:show, :update, :destroy]
 
   def index
-    @about_us_entries = AboutUs.all
+    @about_us_entries = AboutU.all
     render json: @about_us_entries
   end
 
@@ -11,7 +11,7 @@ class Api::V1::AboutUsController < ApplicationController
   end
 
   def create
-    @about_us_entry = AboutUs.new(about_us_params)
+    @about_us_entry = AboutU.new(about_us_params)
     
     if @about_us_entry.save
       render json: @about_us_entry, status: :created, location: @about_us_entry
@@ -35,7 +35,7 @@ class Api::V1::AboutUsController < ApplicationController
   private
 
   def set_about_us
-    @about_us_entry = AboutUs.find(params[:id])
+    @about_us_entry = AboutU.find(params[:id])
   end
 
   def about_us_params
