@@ -40,6 +40,6 @@ class Api::V1::MessageHeadsController < ApplicationController
   end
 
   def message_head_params
-    params.require(:message_head).permit(:title, :photo, :description, :name, :department, :post, :university)
+    params.require(:message_head).permit(:title, :photo, :description, :name, :department, :post, :university, :about_u_id)
   end
 end

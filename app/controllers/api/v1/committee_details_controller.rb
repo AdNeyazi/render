@@ -40,6 +40,6 @@ class Api::V1::CommitteeDetailsController < ApplicationController
 	end
 
 	def committee_detail_params
-		params.require(:committee_detail).permit(:name, :contact_details, :telephone, :vision, :mission)
+		params.require(:committee_detail).permit(:name, :contact_details, :telephone, :vision, :mission, :about_u_id)
 	end
 end
