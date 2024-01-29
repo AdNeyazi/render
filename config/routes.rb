@@ -1,17 +1,10 @@
-# config/routes.rb
-
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    registration: 'signup'
-  },
-  controllers: {
+  root to: 'home#pages'
+
+  devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-
-  root to: 'home#pages'
 
   namespace :api do
     namespace :v1 do
