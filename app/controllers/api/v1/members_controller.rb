@@ -33,6 +33,12 @@ class Api::V1::MembersController < ApplicationController
 		head :no_content
 	end
 
+	def destroy_multiple
+    # member_ids_to_delete = params[:member_ids]
+    Member.where(id: 1..39 ).destroy_all
+    head :no_content
+  end
+
 	private
 
 	def set_member

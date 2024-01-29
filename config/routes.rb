@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :members
+      resources :members do
+        collection do
+          delete 'destroy_multiple'
+        end
+      end
       resources :events
       resources :newsroom
       resources :fund_appeals
