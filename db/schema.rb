@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_29_101256) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_29_104338) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,14 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_101256) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "message_head_id"
-    t.bigint "committee_detail_id"
-    t.bigint "president_message_id"
-    t.bigint "desk_message_id"
-    t.index ["committee_detail_id"], name: "index_about_us_on_committee_detail_id"
-    t.index ["desk_message_id"], name: "index_about_us_on_desk_message_id"
-    t.index ["message_head_id"], name: "index_about_us_on_message_head_id"
-    t.index ["president_message_id"], name: "index_about_us_on_president_message_id"
   end
 
   create_table "committee_details", force: :cascade do |t|
@@ -37,6 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_101256) do
     t.text "mission"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "about_u_id"
+    t.index ["about_u_id"], name: "index_committee_details_on_about_u_id"
   end
 
   create_table "desk_messages", force: :cascade do |t|
@@ -46,6 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_101256) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "about_u_id"
+    t.index ["about_u_id"], name: "index_desk_messages_on_about_u_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -92,6 +88,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_101256) do
     t.string "university"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "about_u_id"
+    t.index ["about_u_id"], name: "index_message_heads_on_about_u_id"
   end
 
   create_table "newsrooms", force: :cascade do |t|
@@ -111,6 +109,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_101256) do
     t.string "post"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "about_u_id"
+    t.index ["about_u_id"], name: "index_president_messages_on_about_u_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,8 +127,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_101256) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "about_us", "committee_details"
-  add_foreign_key "about_us", "desk_messages"
-  add_foreign_key "about_us", "message_heads"
-  add_foreign_key "about_us", "president_messages"
+  add_foreign_key "committee_details", "about_us"
+  add_foreign_key "desk_messages", "about_us"
+  add_foreign_key "message_heads", "about_us"
+  add_foreign_key "president_messages", "about_us"
 end
