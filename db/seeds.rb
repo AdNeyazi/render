@@ -8,9 +8,12 @@
 require 'faker'
 
 # Create 50 fake members
-50.times do
-  AboutU.create(
-    title: Faker::Lorem.words(number: 3).join(' ').capitalize,
-    description: Faker::Lorem.paragraph
+4.times do
+  QuerySend.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    contact_no: Faker::PhoneNumber.phone_number,
+    subject: Faker::Lorem.sentence,
+    message: Faker::Lorem.paragraph
   )
 end
