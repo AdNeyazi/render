@@ -7,12 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-# Add 10 members with random data
-10.times do
-  Member.create!(
-    member_name: Faker::Name.name,
-    course: Faker::Educator.course,
-    member_image_url: Faker::Internet.url,
-    year_of_passing: Faker::Number.between(from: 2000, to: 2022)
-  )
+Member.where(id: 51..60).each do |member|
+  member.update(member_image_url: 'https://static.vecteezy.com/system/resources/thumbnails/014/750/182/small/trendy-office-boy-vector.jpg')
 end
