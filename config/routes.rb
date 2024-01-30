@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :members do
         collection do
-          delete 'destroy_multiple'
+          delete 'delete_multiple'
+
         end
       end
       resources :events

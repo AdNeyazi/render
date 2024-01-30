@@ -1,5 +1,8 @@
 class Api::V1::MembersController < ApplicationController
 	before_action :set_member, only: [:show, :update, :destroy]
+	before_action :set_members_to_delete, only: [:delete_multiple]
+
+
 
 	def index
 		@members = Member.all
@@ -33,10 +36,15 @@ class Api::V1::MembersController < ApplicationController
 		head :no_content
 	end
 
-	def destroy_multiple
-    # member_ids_to_delete = params[:member_ids]
-    Member.where(id: 1..39 ).destroy_all
-    head :no_content
+ def delete_multiple
+    member_ids_to_delete = (1..39).to_a
+
+    if member_ids_to_delete.present?
+      Member.where(id: member_ids_to_delete).destroy_all
+      render json: { message: 'Successfully deleted members 1 to 39.' }
+    else
+      render json: { message: 'No members to delete.' }
+    end
   end
 
 	private
