@@ -7,16 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-# Create 50 fake members
-5.times do
-  Contact.create(
-    team_name: Faker::Team.name,
-    team_email: Faker::Internet.email,
-    department: Faker::Job.field,
-    university: Faker::University.name,
-    professor_name: Faker::Name.name,
-    post: Faker::Job.title,
-    phone_no: Faker::PhoneNumber.phone_number,
-    professor_email: Faker::Internet.email
-  )
-end
+members_to_delete = Member.order(created_at: :asc).limit(40)
+members_to_delete.each(&:destroy)
