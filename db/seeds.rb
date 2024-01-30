@@ -7,5 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-members_to_delete = Member.order(created_at: :asc).limit(10)
-members_to_delete.each(&:destroy)
+# Add 10 members with random data
+10.times do
+  Member.create!(
+    member_name: Faker::Name.name,
+    course: Faker::Educator.course,
+    member_image_url: Faker::Internet.url,
+    year_of_passing: Faker::Number.between(from: 2000, to: 2022)
+  )
+end
