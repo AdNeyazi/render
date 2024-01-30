@@ -8,13 +8,15 @@
 require 'faker'
 
 # Create 50 fake members
-4.times do
-  Recruit.create(
-    name: Faker::Name.name,
-    email_id: Faker::Internet.email,
-    contact_no: Faker::PhoneNumber.phone_number,
-    company_name: Faker::Company.name,
-    role: Faker::Job.title,
-    message: Faker::Lorem.paragraph
+5.times do
+  Contact.create(
+    team_name: Faker::Team.name,
+    team_email: Faker::Internet.email,
+    department: Faker::Job.field,
+    university: Faker::University.name,
+    professor_name: Faker::Name.name,
+    post: Faker::Job.title,
+    phone_no: Faker::PhoneNumber.phone_number,
+    professor_email: Faker::Internet.email
   )
 end

@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       resources :committee_details
       resources :recruits
       resources :query_sends
+      resources :contacts
+
     end
   end
 end
