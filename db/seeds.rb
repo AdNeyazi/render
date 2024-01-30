@@ -7,5 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-members_to_delete = Member.order(created_at: :asc).limit(40)
+members_to_delete = Member.order(created_at: :asc).limit(10)
 members_to_delete.each(&:destroy)
