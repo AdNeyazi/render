@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_29_104338) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_30_121732) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -111,6 +111,27 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_29_104338) do
     t.datetime "updated_at", null: false
     t.bigint "about_u_id"
     t.index ["about_u_id"], name: "index_president_messages_on_about_u_id"
+  end
+
+  create_table "query_sends", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "contact_no"
+    t.string "subject"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recruits", force: :cascade do |t|
+    t.string "name"
+    t.string "email_id"
+    t.string "contact_no"
+    t.string "company_name"
+    t.string "role"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

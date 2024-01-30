@@ -199,3 +199,5 @@ production:
   # database: render_test_production
   # username: render_test
   # password: <%= ENV["RENDER_TEST_DATABASE_PASSWORD"] %>
+
+rnd_jPDiaKKu4QTvKwWOVCTRNeuNA7Dy render api kye 

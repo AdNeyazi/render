@@ -1,0 +1,2 @@
+class QuerySend < ApplicationRecord
+end

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       resources :members do
         collection do
           delete 'delete_multiple'
-
         end
       end
       resources :events
@@ -22,6 +21,8 @@ Rails.application.routes.draw do
       resources :message_heads
       resources :desk_messages
       resources :committee_details
+      resources :recruits
+      resources :query_sends
     end
   end
 end
