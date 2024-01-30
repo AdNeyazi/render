@@ -9,11 +9,12 @@ require 'faker'
 
 # Create 50 fake members
 4.times do
-  QuerySend.create(
+  Recruit.create(
     name: Faker::Name.name,
-    email: Faker::Internet.email,
+    email_id: Faker::Internet.email,
     contact_no: Faker::PhoneNumber.phone_number,
-    subject: Faker::Lorem.sentence,
+    company_name: Faker::Company.name,
+    role: Faker::Job.title,
     message: Faker::Lorem.paragraph
   )
 end
